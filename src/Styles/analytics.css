@@ -1,0 +1,128 @@
+#charts-container1{
+    display:grid;
+    grid-template-columns: 2fr 4fr; 
+    padding: 2vw;
+    height: 28vh;
+}
+
+    .recharts-layer>text>tspan{
+        font-size: 10px
+    }
+
+        #top-employees>.chart-title{
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        #sales-by-category>#choose-category>select{
+            background-color: #ecf0f1;
+            margin-left: 3px;
+            font-weight: bold;
+            border: none;
+            box-shadow: 0px 1px rgba(63, 58, 58, 0.27);
+        }
+
+        #sales-by-category>#choose-category>span{
+            font-size: 14px;
+            font-weight: bold;
+        }
+    
+
+#charts-container2{
+    display:grid;
+    grid-template-columns: 4fr 2fr; 
+    padding: 2vw;
+    height: 25vh;
+}
+
+    #sales-since>.chart-title{
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    #clilent-acquisition>.chart-title{
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+        .recharts-layer>g>text{
+            font-size: 10px
+        }
+
+#badges-container{
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    padding: 20px
+}
+
+    #badges-container>.badge-container{
+        min-width: 170px;
+    }
+
+    .badge{
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas: 
+        "i d"
+        "i t";
+    }
+
+    .badge>.icon-container{
+        border-radius: 50%;
+        grid-area: i;
+        height: 63px;
+        width: 63px;
+        position: relative;
+        box-shadow: 1px 2px 4px #2c2f2f;
+        margin: auto;
+        margin-bottom: 10px;
+    }
+
+        #emails-sent>.badge>.icon-container{
+            background-color:#3498db;
+        }
+
+        #outstanding-clients>.badge>.icon-container{
+            background-color:#e74c3c;
+        }
+
+        #hottest-country>.badge>.icon-container{
+            background-color:#f1c40f;
+        }
+
+        #new-clients>.badge>.icon-container{
+            background-color:#2ecc71;
+        }
+
+        .icon-container>i:before{
+            width: 50px;
+            font-size: 40px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            padding-left: 11.5px;
+            color: #ecf0f1;
+        }
+
+        .icon-container:hover{
+            opacity: 0.5;
+        }
+
+    .badge>.data{
+        grid-area: d;
+        font-size: 30px;
+        margin-left: 20px;
+    }
+
+    .badge>.title{
+        grid-area: t;
+        font-size: 12px;
+        font-weight: bold;
+        height: 30px;
+        margin-left: 20px;
+    }

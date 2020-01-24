@@ -1,0 +1,194 @@
+#actions-page{
+    margin-top: 60px;
+    padding: 20px;
+    font-size: 12px;
+    /* background-color: #ecf0f1; */
+}
+
+    #actions-page>hr{
+        border: 0.3px solid rgba(63, 58, 58, 0.06);
+        }
+
+#actions-update{
+    margin-bottom: 20px;
+}
+
+    #actions-update-container> .client-name{
+        margin-bottom: 20px;
+    }
+
+    #update-name-input{
+        margin-left: 10px;
+    }
+
+    #doesnt-exist{
+        color: rgba(239, 10, 10, 0.97);
+        display: inline-block;
+        margin-left: 25px;
+    }
+
+    .text-input{
+        background-color: #ecf0f1;
+        box-shadow: none;
+        border: none;
+        width: 90px;
+        box-shadow: 0px 1px rgba(63, 58, 58, 0.27);
+        color: rgb(63, 58, 58);
+    }
+
+    #other-updates-container{
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: 2fr 1.5fr 1fr 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        margin-left: 20px;
+        margin-top: 10px;
+        width: 400px;
+    }
+
+    #other-updates-container>select{
+        color: rgb(117, 117, 117);
+    }
+
+    #other-updates-container>i{
+        color:rgba(22, 150, 54, 0.986);
+            -webkit-animation: swing 1s ease;
+            animation: swing 1s ease;
+            -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+    }
+
+    .click{
+        color:#F7CE3E;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .click:hover{
+        color:rgba(190, 18, 18, 0.781)
+    }
+
+
+/* Add Client */
+
+#actions-add{
+    margin-top: 30px;
+}
+
+    #actions-add>#button{
+        display: inline-block;
+
+        width: 187px;
+        font-weight: bold;
+        background-color: #F7CE3E;
+        padding: 4px;
+        margin-top: 15px;
+        border-radius: 3px;
+        box-shadow: 1px 1px 2px #ecf0f1;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    #actions-add>#button:hover{
+        background-color: rgb(255, 224, 111);
+    }
+
+    #actions-add>i{
+        color:rgba(22, 150, 54, 0.986);
+        -webkit-animation: swing 1s ease;
+        animation: swing 1s ease;
+        -webkit-animation-iteration-count: 1;
+        animation-iteration-count: 1;
+        margin-left: 20px;
+    }
+
+    #actions-add-container{
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: 1fr 1fr 0.5fr;
+        grid-template-rows: repeat(5, 1fr);
+        width: 250px;
+    }
+
+    #actions-add-container>input{
+        background-color: #ecf0f1;
+        box-shadow: none;
+        border: none;
+        width: 90px;
+        box-shadow: 0px 1px rgba(63, 58, 58, 0.27);
+        color: rgb(63, 58, 58);
+    }
+
+
+    #actions-add-container>i{
+        color: red
+    }
+
+
+
+    @-webkit-keyframes swing
+{
+    15%
+    {
+        -webkit-transform: translateX(5px);
+        transform: translateX(5px);
+    }
+    30%
+    {
+        -webkit-transform: translateX(-5px);
+       transform: translateX(-5px);
+    } 
+    50%
+    {
+        -webkit-transform: translateX(3px);
+        transform: translateX(3px);
+    }
+    65%
+    {
+        -webkit-transform: translateX(-3px);
+        transform: translateX(-3px);
+    }
+    80%
+    {
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
+    }
+    100%
+    {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+@keyframes swing
+{
+    15%
+    {
+        -webkit-transform: translateX(5px);
+        transform: translateX(5px);
+    }
+    30%
+    {
+        -webkit-transform: translateX(-5px);
+        transform: translateX(-5px);
+    }
+    50%
+    {
+        -webkit-transform: translateX(3px);
+        transform: translateX(3px);
+    }
+    65%
+    {
+        -webkit-transform: translateX(-3px);
+        transform: translateX(-3px);
+    }
+    80%
+    {
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
+    }
+    100%
+    {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}

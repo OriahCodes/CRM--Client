@@ -1,0 +1,26 @@
+#home-label{
+    margin-top: 170px;
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+}
+
+#home-label>div{
+    font-size: 150px;
+    font-weight: bolder;
+}
+
+#home-label>span{
+    font-size: 20px
+}
+
+#c:hover{
+    color: blue
+}
+
+#r:hover{
+    color: red
+}
+
+#m:hover{
+    color: green
+}
