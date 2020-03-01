@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-    ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip,
+  ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip,
 } from 'recharts';
 
 // const tempData= [
@@ -18,58 +18,65 @@ import {
 // ]
 
 export default class SalesSince extends Component {
-  state={
+  state = {
     salesSince: {
-      data : [],
-      ready : false
-    }
+      data: {},
+      ready: false
+    },
+    numOfMonths :  11
   }
-  
+
   static getDerivedStateFromProps = (props, state) => {
     if (props.salesSince && (props.salesSince.ready !== false)) {
       debugger
-        return {
-          salesSince: props.salesSince
-        }
+      return {
+        salesSince: props.salesSince
+      }
     }
     return null
   }
 
   componentDidMount = () => {
-    this.props.handleMonthlySales(11, "salesSince", "ready")
+    this.props.handleMonthlySales(this.state.numOfMonths, "salesSince", "ready")
   }
 
   render() {
-    const {salesSince} = this.state
+    const { salesSince } = this.state
+    let objectKeys = Object.keys(salesSince.data)
     let loadingState = true
-    if(salesSince.data.length !== 11){loadingState = false}
+    if (objectKeys.length !== 11) { loadingState = false }
     console.log(salesSince)
     let first = ""
-    if(salesSince.data.length !== 0){first = {month: salesSince.data[0].name, year: salesSince.data[0].year}}
-      return (
-        loadingState ? 
-          <div></div> : 
-        <div id="sales-since">
-            <div className="chart-title">
-                Monthly Sales Since {first.month} {first.year}
-            </div>
-            
-            <ResponsiveContainer height={180} width="100%">
-                <LineChart
-                    width={100}
-                    height={100}
-                    data={salesSince.data} //{tempData}
-                    margin={{
-                        top: 20, right: 20, bottom: 20, left: 20,
-                    }}
-                >
-                    <XAxis dataKey="name" />
-                    <YAxis />
-                    <Tooltip />
-                    <Line type="monotone" dataKey="sales" stroke="#ff6e54" dot={false} strokeWidth={2} />
-                </LineChart>
-            </ResponsiveContainer>
-        </div>
-        )    
+    if (objectKeys.length !== 0) { first = { month: salesSince.data[0].name, year: salesSince.data[0].year } }
+
+    let dataArray = []
+    for (let i in objectKeys){
+      dataArray.push(salesSince.data[i])
     }
+    return (
+      loadingState ?
+        <div></div> :
+        <div id="sales-since">
+          <div className="chart-title">
+            Monthly Sales Since {first.month} {first.year}
+          </div>
+
+          <ResponsiveContainer height={180} width="100%">
+            <LineChart
+              width={100}
+              height={100}
+              data={dataArray} //{tempData}
+              margin={{
+                top: 20, right: 20, bottom: 20, left: 20,
+              }}
+            >
+              <XAxis dataKey="name" />
+              <YAxis />
+              <Tooltip />
+              <Line type="monotone" dataKey="sales" stroke="#ff6e54" dot={false} strokeWidth={2} />
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
+    )
+  }
 }

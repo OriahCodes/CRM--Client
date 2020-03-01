@@ -22,7 +22,7 @@ class App extends Component {
         country: []
       },
       salesSince: {
-        data: [],
+        data: {},
         ready: false
       },
       clientsSum: {
@@ -95,20 +95,19 @@ class App extends Component {
     this.setState({ clientsSum })
   }
 
-  setSalesSince = (salesArray, num, index, status) => {
+  setSalesSince = (salesInfo, num, index, status) => {
     let ready
     if ((index === num) && (status === "ready")) { ready = true }
     else { ready = false }
 
     let { salesSince } = this.state
-    salesSince.data.push(salesArray.data)
+    salesSince.data[index] = salesInfo.data
     salesSince.ready = ready
     this.setState({ salesSince })
   }
 
   getSalesSince = (num, func, status) => {
     const monthsArray = this.pastMonths(num)
-    let ready
     monthsArray.forEach((date, index) => {
       let month = date.month
       let year = date.year
