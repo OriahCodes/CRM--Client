@@ -6,7 +6,6 @@ class NewClients extends Component {
     state = {
         iconName : "chart-line",
         data : 14,
-        // title : ,
     }
 
     monthNames = ["January", "February", "March", "April", "May", "June",

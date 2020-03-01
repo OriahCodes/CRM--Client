@@ -44,7 +44,8 @@ class App extends Component {
 
   getClients = () => {
     // setTimeout(() => {
-    //   let clients = require('./data/data.json')
+    //   const analytics = require('./data/analytics')
+    //   const clients = analytics.updatedData()
     //   this.setState({clients})
     // }, 1000);
 
@@ -79,7 +80,7 @@ class App extends Component {
     var now = new Date()
     let monthsArray = [{ month: shortMonths[now.getMonth()], year: now.getYear() + 1900 }]
     for (let i = 0; i < num; i++) {
-      now.setDate(now.getDate() - 30)
+      now.setMonth(now.getMonth()-1);
       monthsArray.push({ month: shortMonths[now.getMonth()], year: now.getYear() + 1900 })
     }
     return monthsArray.reverse()
@@ -94,7 +95,11 @@ class App extends Component {
     this.setState({ clientsSum })
   }
 
-  setSalesSince = (salesArray, num, ready) => {
+  setSalesSince = (salesArray, num, index, status) => {
+    let ready
+    if ((index === num) && (status === "ready")) { ready = true }
+    else { ready = false }
+
     let { salesSince } = this.state
     salesSince.data.push(salesArray.data)
     salesSince.ready = ready
@@ -105,14 +110,11 @@ class App extends Component {
     const monthsArray = this.pastMonths(num)
     let ready
     monthsArray.forEach((date, index) => {
-      if ((index === (monthsArray.length - 1)) && (status === "ready")) { ready = true }
-      else { ready = false }
-
       let month = date.month
       let year = date.year
       axios.get(URL + `salesSince/${year}/${month}`)
         .then(results => {
-          func(results, num, ready)
+          func(results, num, index, status)
         })
         .catch(error => {
           console.log(error)
@@ -234,6 +236,7 @@ class App extends Component {
         <div className="App">
 
           <Navbar />
+
           <Route exact path="/" render={() =>
             <Home />} />
 

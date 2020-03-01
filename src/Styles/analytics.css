@@ -31,7 +31,7 @@
 #charts-container2{
     display:grid;
     grid-template-columns: 4fr 2fr; 
-    padding: 2vw;
+    padding: 0vw 2vw 2vw 2vw;
     height: 25vh;
 }
 

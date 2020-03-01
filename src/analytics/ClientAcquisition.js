@@ -4,9 +4,9 @@ import {
 } from 'recharts';
 
 const tempData = [
-  {name: "Last Month", value: 44},
-  {name: "Last Six Months", value: 57},
-  {name: "Last year", value: 95}]
+  {name: "Last Month", value: 34},
+  {name: "Last Six Months", value: 47},
+  {name: "Last year", value: 85}]
 
 export default class ClientAcquisition extends Component {
   state={
